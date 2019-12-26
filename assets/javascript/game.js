@@ -24,11 +24,28 @@ var chosenWord = wordDictionary[Math.floor(Math.random() * wordDictionary.length
 //Creates underscores for user equal to length of chosen word
 var guessingStatus = [];
 
+//Creates a variable which will be used to store user answer
+var userGuess = ""
+
 for (var i = 0; i < chosenWord.length; i++) {
     guessingStatus.push("_ ");
 }
 
+//Displays underscores to user, uses a single space as separator
 chosenWordText.textContent = guessingStatus.join(" ");
 
-console.log(guessingStatus)
+console.log(chosenWord);
+
+//Initiates guess when user presses a key
+document.onkeyup = function(event){
+
+    userGuess = event.key;
+    console.log(userGuess);
+    if (chosenWord.includes(userGuess)){
+        alert("He's done it!");
+    } else {
+        alert("Awww maan!");
+    }
+
+}
 
