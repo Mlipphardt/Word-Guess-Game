@@ -21,6 +21,9 @@ var wordDictionary = [
 //Selects goal word
 var chosenWord = wordDictionary[Math.floor(Math.random() * wordDictionary.length)];
 
+//Keeps a record of letters guessed
+var lettersGuessed = [];
+
 //Creates underscores for user equal to length of chosen word
 var guessingStatus = [];
 
@@ -43,6 +46,9 @@ document.onkeyup = function(event){
 
     userGuess = event.key.toLowerCase();
     console.log(userGuess);
+    lettersGuessed.push(userGuess);
+    lettersGuessedText.textContent = lettersGuessed.join(" ");
+    
     if (chosenWord.includes(userGuess)){
         alert("He's done it!");
     } else {
