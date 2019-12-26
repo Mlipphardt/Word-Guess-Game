@@ -34,12 +34,14 @@ for (var i = 0; i < chosenWord.length; i++) {
 //Displays underscores to user, uses a single space as separator
 chosenWordText.textContent = guessingStatus.join(" ");
 
+
+//REMOVE LATER -This placeholder is to help testing
 console.log(chosenWord);
 
 //Initiates guess when user presses a key
 document.onkeyup = function(event){
 
-    userGuess = event.key;
+    userGuess = event.key.toLowerCase();
     console.log(userGuess);
     if (chosenWord.includes(userGuess)){
         alert("He's done it!");
