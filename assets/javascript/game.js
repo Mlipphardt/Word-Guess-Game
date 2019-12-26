@@ -11,9 +11,7 @@ var wordDictionary = [
    "orc",
    "elf",
    "wizard",
-   "kobold",
    "goblin",
-   "paladin",
    "cleric",
    "knight" 
 ];
@@ -41,6 +39,11 @@ chosenWordText.textContent = guessingStatus.join(" ");
 //REMOVE LATER -This placeholder is to help testing
 console.log(chosenWord);
 
+//This is test code to see if indexOf method could be used on non-array string.
+var cats = "timothy";
+console.log(cats.indexOf("o"));
+
+
 //Initiates guess when user presses a key
 document.onkeyup = function(event){
 
@@ -48,11 +51,13 @@ document.onkeyup = function(event){
     console.log(userGuess);
     lettersGuessed.push(userGuess);
     lettersGuessedText.textContent = lettersGuessed.join(" ");
-    
+
     if (chosenWord.includes(userGuess)){
-        alert("He's done it!");
+        let chosenWordIndex = chosenWord.indexOf(userGuess);
+        guessingStatus[chosenWordIndex] = userGuess;
+        chosenWordText.textContent = guessingStatus.join(" ");
     } else {
-        alert("Awww maan!");
+        console.log("Letter not part of Chosen Word")
     }
 
 }
