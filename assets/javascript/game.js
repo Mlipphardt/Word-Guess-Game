@@ -76,8 +76,12 @@ document.onkeyup = function(event){
         let chosenWordIndex = chosenWord.indexOf(userGuess);
         guessingStatus[chosenWordIndex] = userGuess;
         chosenWordText.textContent = guessingStatus.join(" ");
-        lettersGuessed.push(userGuess);
-        lettersGuessedText.textContent = lettersGuessed.join(" ");
+        if(!lettersGuessed.includes(userGuess)){
+            lettersGuessed.push(userGuess);
+            lettersGuessedText.textContent = lettersGuessed.join(" ");
+        } 
+        // lettersGuessed.push(userGuess);
+        // lettersGuessedText.textContent = lettersGuessed.join(" ");
         if(guessingStatus.join("") == chosenWord){
             wins++;
             winsText.textContent = wins;
@@ -86,8 +90,12 @@ document.onkeyup = function(event){
     } else {
         guessesRemaining -= 1;
         guessesRemainingText.textContent = guessesRemaining;
-        lettersGuessed.push(userGuess);
-        lettersGuessedText.textContent = lettersGuessed.join(" ");
+        if(!lettersGuessed.includes(userGuess)){
+            lettersGuessed.push(userGuess);
+            lettersGuessedText.textContent = lettersGuessed.join(" ");
+        } 
+        // lettersGuessed.push(userGuess);
+        // lettersGuessedText.textContent = lettersGuessed.join(" ");
         if(guessesRemaining == 0){
             losses++;
             lossesText.textContent = losses;
