@@ -52,11 +52,6 @@ chosenWordText.textContent = guessingStatus.join("");
 //REMOVE LATER -This placeholder is to help testing
 console.log(chosenWord);
 
-
-//This is test code to see if indexOf method could be used on non-array string.
-var cats = ["t", "i", "m"];
-console.log(cats.join(""));
-
 //Function to reset game
 function resetGame(){
     guessesRemaining = 10;
