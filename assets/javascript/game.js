@@ -76,11 +76,8 @@ document.onkeyup = function(event){
         console.log(userGuess);
         for (i = 0; i < chosenWord.length; i++){
             chosenWordIndex = chosenWord.indexOf(userGuess, i);
-            guessingStatus[chosenWordIndex] = userGuess;
-            chosenWordText.textContent = guessingStatus.join(" ");
             console.log(chosenWordIndex);
-                if (!chosenWordIndex == 1) {
-                    console.log("This is a test)")
+                if (!(chosenWordIndex == -1)) {
                     guessingStatus[chosenWordIndex] = userGuess;
                     chosenWordText.textContent = guessingStatus.join(" ");
                 }
