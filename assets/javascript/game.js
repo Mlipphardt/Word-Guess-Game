@@ -10,11 +10,8 @@ var lettersGuessedText = document.getElementById("lettersGuessed");
 
 // Possible choices for goal word
 var wordDictionary = [
-   "orc",
-   "elf",
-   "wizard",
-   "goblin",
-   "knight" 
+    "potion",
+    "intelligence"
 ];
 
 
@@ -35,9 +32,11 @@ var lettersGuessed = [];
 //Creates underscores for user equal to length of chosen word
 var guessingStatus = [];
 
+//Will be used to hold index of letter to fill in underscores
+var chosenWordIndex;
 
 //Creates a variable which will be used to store user answer
-var userGuess = ""
+var userGuess = "";
 
 //Iterator
 for (var i = 0; i < chosenWord.length; i++) {
@@ -64,6 +63,7 @@ function resetGame(){
     chosenWordText.textContent = guessingStatus.join("_");
     lettersGuessed = [];
     lettersGuessedText.textContent = lettersGuessed.join();
+    //REMOVE LATER - This placeholder is to help testing
     console.log(chosenWord);
 }
 
@@ -73,9 +73,23 @@ document.onkeyup = function(event){
     userGuess = event.key.toLowerCase();
 
     if (chosenWord.includes(userGuess)){
-        let chosenWordIndex = chosenWord.indexOf(userGuess);
-        guessingStatus[chosenWordIndex] = userGuess;
-        chosenWordText.textContent = guessingStatus.join(" ");
+        console.log(userGuess);
+        for (i = 0; i < chosenWord.length; i++){
+            chosenWordIndex = chosenWord.indexOf(userGuess, i);
+            guessingStatus[chosenWordIndex] = userGuess;
+            chosenWordText.textContent = guessingStatus.join(" ");
+            console.log(chosenWordIndex);
+                if (!chosenWordIndex == 1) {
+                    console.log("This is a test)")
+                    guessingStatus[chosenWordIndex] = userGuess;
+                    chosenWordText.textContent = guessingStatus.join(" ");
+                }
+        }
+
+        //Turn into a for loop
+        // let chosenWordIndex = chosenWord.indexOf(userGuess);
+        // guessingStatus[chosenWordIndex] = userGuess;
+        // chosenWordText.textContent = guessingStatus.join(" ");
         if(!lettersGuessed.includes(userGuess)){
             lettersGuessed.push(userGuess);
             lettersGuessedText.textContent = lettersGuessed.join(" ");
