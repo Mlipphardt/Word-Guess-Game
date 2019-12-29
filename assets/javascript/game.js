@@ -1,6 +1,4 @@
 
-//TODO: Make game work with dictionary entries that contain duplicate letters (i. e. 'cleric')
-
 // Variables for grabbing html tags
 var chosenWordText = document.getElementById("chosenWord");
 var guessesRemainingText = document.getElementById("guessesRemaining");
@@ -10,8 +8,39 @@ var lettersGuessedText = document.getElementById("lettersGuessed");
 
 // Possible choices for goal word
 var wordDictionary = [
-    "potion",
-    "intelligence"
+    "reinforcement",
+    "punishment",
+    "skinner",
+    "watson",
+    "acceleration",
+    "deceleration",
+    "ratio",
+    "pigeon",
+    "rat",
+    "lever",
+    "schedule",
+    "contingency",
+    "functional",
+    "observable",
+    "trend",
+    "level",
+    "chart",
+    "celeration",
+    "standard",
+    "attention",
+    "tangible",
+    "escape",
+    "sensory",
+    "stimulus",
+    "motivating",
+    "approach",
+    "preferred",
+    "assessment",
+    "reinforcer",
+    "punisher",
+    "antecedent",
+    "behavior",
+    "consequence"
 ];
 
 
@@ -22,9 +51,6 @@ var guessesRemaining = 10;
 winsText.textContent = 0;
 lossesText.textContent = 0;
 guessesRemainingText.textContent = 10;
-
-//Selects goal word
-var chosenWord = wordDictionary[Math.floor(Math.random() * wordDictionary.length)];
 
 //Keeps a record of letters guessed
 var lettersGuessed = [];
@@ -39,17 +65,7 @@ var chosenWordIndex;
 var userGuess = "";
 
 //Iterator
-for (var i = 0; i < chosenWord.length; i++) {
-    guessingStatus.push("_ ");
-}
-
-
-//Displays underscores to user, uses a single space as separator
-chosenWordText.textContent = guessingStatus.join("");
-
-
-//REMOVE LATER -This placeholder is to help testing
-console.log(chosenWord);
+var i;
 
 //Function to reset game
 function resetGame(){
@@ -63,9 +79,9 @@ function resetGame(){
     chosenWordText.textContent = guessingStatus.join("_");
     lettersGuessed = [];
     lettersGuessedText.textContent = lettersGuessed.join();
-    //REMOVE LATER - This placeholder is to help testing
-    console.log(chosenWord);
 }
+
+resetGame();
 
 //Initiates guess when user presses a key
 document.onkeyup = function(event){
@@ -83,16 +99,10 @@ document.onkeyup = function(event){
                 }
         }
 
-        //Turn into a for loop
-        // let chosenWordIndex = chosenWord.indexOf(userGuess);
-        // guessingStatus[chosenWordIndex] = userGuess;
-        // chosenWordText.textContent = guessingStatus.join(" ");
         if(!lettersGuessed.includes(userGuess)){
             lettersGuessed.push(userGuess);
             lettersGuessedText.textContent = lettersGuessed.join(" ");
         } 
-        // lettersGuessed.push(userGuess);
-        // lettersGuessedText.textContent = lettersGuessed.join(" ");
         if(guessingStatus.join("") == chosenWord){
             wins++;
             winsText.textContent = wins;
@@ -105,8 +115,6 @@ document.onkeyup = function(event){
             lettersGuessed.push(userGuess);
             lettersGuessedText.textContent = lettersGuessed.join(" ");
         } 
-        // lettersGuessed.push(userGuess);
-        // lettersGuessedText.textContent = lettersGuessed.join(" ");
         if(guessesRemaining == 0){
             losses++;
             lossesText.textContent = losses;
@@ -114,50 +122,3 @@ document.onkeyup = function(event){
         }
     }
 }
-
-//  while(true){
-//      if(guessesRemaining = 0){
-//          losses++;
-//          resetGame();
-//      } else if(guessingStatus.join("") == chosenWord){
-//          wins++;
-//          resetGame();
-//      }
-// }
-
-    //Initiates guess when user presses a key
-    // document.onkeyup = function(event){
-
-    //     userGuess = event.key.toLowerCase();
-    //     console.log(userGuess);
-    //     lettersGuessed.push(userGuess);
-    //     lettersGuessedText.textContent = lettersGuessed.join(" ");
-
-    //     if (chosenWord.includes(userGuess)){
-    //         let chosenWordIndex = chosenWord.indexOf(userGuess);
-    //         guessingStatus[chosenWordIndex] = userGuess;
-    //         chosenWordText.textContent = guessingStatus.join(" ");
-    //     } else {
-    //         console.log("Letter not part of Chosen Word")
-    //     }
-    // }
-// }
-
-//Initiates guess when user presses a key
-// document.onkeyup = function(event){
-
-//     userGuess = event.key.toLowerCase();
-//     console.log(userGuess);
-//     lettersGuessed.push(userGuess);
-//     lettersGuessedText.textContent = lettersGuessed.join(" ");
-
-//     if (chosenWord.includes(userGuess)){
-//         let chosenWordIndex = chosenWord.indexOf(userGuess);
-//         guessingStatus[chosenWordIndex] = userGuess;
-//         chosenWordText.textContent = guessingStatus.join(" ");
-//     } else {
-//         console.log("Letter not part of Chosen Word")
-//     }
-
-// }
-
