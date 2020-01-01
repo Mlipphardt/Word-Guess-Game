@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glossary</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div class = "container-fluid bg-primary">
+
+        <div class = "row bg-info mx-0">
+            
+            <div class = "col-lg-1"></div>
+
+            <div class = "col-lg-3 text-center">
+
+                <h1 class = "Title-words">Behaviorist</h1>
+
+            </div>
+
+            <div class = "col-lg-6 text-center font-weight-bold">
+
+                <img src="./assets/images/standardchartresized.png" class="img-fluid" alt="B.F. Skinner">
+
+            </div>
+
+            <div class = "col-lg-3 text-center font-weight-bold">
+                
+                <h1 class = "Title-words">Glossary</h1>
+
+            </div>
+
+            <div class = "col-lg-1"></div>
+
+
+        </div>
+
+        <div class = "row">
+            
+            <div class = "col-lg-4"></div>
+
+            <div class = "col-lg-4 text-center">
+
+                <span>
+                    <a href="./index.html"> <strong>Game</strong> |</a>
+                    <a href="./glossary.html"> Glossary</a>
+                </span>
+
+            </div>
+
+            <div class = "col-lg-4"></div>
+
+        </div>
+
+        <div class = "row">
+
+            <div class = "col-lg-1"></div>
+
+
+            <div class = "col-lg-10 jumbotron bg-info text-center">
+
+                <div class = "row">
+
+                    <div class = "col-lg-12"
+                    <!-- Title for game -->
+                    <h1>Word Guessing Game!</h1>
+                    <br>
+                
+                    <!-- Instructions -->
+                    <p>Press any key to get started!</p>
+                    <br>
+
+                    </div>
+
+                </div>
+
+                <div class = "row">
+
+                    <div class = "col-lg-12"
+                    <!-- Word chosen by computer will be represented by underscores here -->
+                    <p id = "chosenWord"></p>
+                    <br>
+                    </div>
+
+                </div>
+                
+                <div class = "row">
+                
+                    <div class = "col-lg-3">
+
+                    <img src="./assets/images/rat.jpg" class="img-fluid" alt="a rat">
+
+
+                    </div>    
+                
+                    <div class = "col-lg-6 test-left">
+                    <!-- Keeps a count of guesses until player loses -->
+                    Guesses remaining:<p id = "guessesRemaining"></p>
+                    <!-- Records player wins and losses -->
+                    Wins: <p id = "winsText"></p>
+                    Losses: <p id = "lossesText"></p>
+                    <br>
+                    </div>
+
+                   <div class = "col-lg-3">
+
+                  <img src="./assets/images/pigeon.jpg" class="img-fluid" alt="a pigeon">
+
+                    
+                   </div>
+
+
+
+                </div>  
+
+                <div class = "row">
+
+                    <div class = "col-lg-12">
+                    <!-- Shows player letters guessed so far -->
+                    Letter guessed so far: <p id = "lettersGuessed"></p>
+                    </div>
+                 
+                </div>
+
+
+            <div class = "col-lg-1"></div>
+
+
+      </div>
+        
+    </div>
+
+    <script src="./assets/javascript/game.js">
+
+    </script>
+
+</body>
+</html>
