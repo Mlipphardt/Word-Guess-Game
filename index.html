@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class = "container-fluid">
+    <div class = "container-fluid bg-primary">
 
         <div class = "row bg-info mx-0">
             
@@ -60,28 +60,38 @@
 
         <div class = "row">
 
-        </div>
+            <div class = "col-lg-1"></div>
 
-        <!-- Title for game -->
-        <h1>Word Guessing Game!</h1>
-        <br>
-        <!-- Instructions -->
-        <p>Press any key to get started!</p>
-        <br>
-        <!-- Word chosen by computer will be represented by underscores here -->
-        <p id = "chosenWord"></p>
-        <br>
-        <!-- Keeps a count of guesses until player loses -->
-        Guesses remaining:<p id = "guessesRemaining"></p>
-        <br>
-        <!-- Records player wins and losses -->
-        Wins: <p id = "winsText"></p>
-        Losses: <p id = "lossesText"></p>
-        <br>
-        <!-- Shows player letters guessed so far -->
-        Letter guessed so far: <p id = "lettersGuessed"></p>
+
+            <div class = "col-lg-10 jumbotron bg-info text-center">
+
+            <!-- Title for game -->
+            <h1>Word Guessing Game!</h1>
+            <br>
+            <!-- Instructions -->
+            <p>Press any key to get started!</p>
+            <br>
+            <!-- Word chosen by computer will be represented by underscores here -->
+            <p id = "chosenWord"></p>
+            <br>
+            <!-- Keeps a count of guesses until player loses -->
+            Guesses remaining:<p id = "guessesRemaining"></p>
+            <br>
+            <!-- Records player wins and losses -->
+            Wins: <p id = "winsText"></p>
+            Losses: <p id = "lossesText"></p>
+            <br>
+            <!-- Shows player letters guessed so far -->
+            Letter guessed so far: <p id = "lettersGuessed"></p>
+            </div>
+
+            <div class = "col-lg-1"></div>
+
+
+      </div>
         
     </div>
+
     <script src="./assets/javascript/game.js">
 
     </script>

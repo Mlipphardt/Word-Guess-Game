@@ -8,6 +8,11 @@
     margin-top: 29px;
 }
 
-span{
-    font-size: large
+a{
+    font-size: x-large;
+    color: white;
+}
+
+.jumbotron{
+    color: white;
 }
