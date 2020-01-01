@@ -2,30 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guessing Game!</title>
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
 <body>
 
-    <h1>Word Guessing Game!</h1>
-    <br>
-    <p>Press any key to get started!</p>
-    <br>
-    <p id = "chosenWord"></p>
-    <br>
-    Guesses remaining:<p id = "guessesRemaining"></p>
-    <br>
-    Wins: <p id = "winsText"></p>
-    Losses: <p id = "lossesText"></p>
-    <br>
-    Letter guessed so far: <p id = "lettersGuessed"></p>
-    
+    <div class = "container-fluid">
 
+        <div class = "row bg-info mx-0">
+            
+            <div class = "col-lg-1"></div>
+
+            <div class = "col-lg-3 text-center">
+
+                Behaviorist
+
+            </div>
+
+            <div class = "col-lg-4 text-center">
+
+                <img src="./assets/images/skinnerresized.jpg" class="img-fluid" alt="B.F. Skinner">
+
+            </div>
+
+            <div class = "col-lg-3 text-center">
+                Hangman
+            </div>
+
+            <div class = "col-lg-1"></div>
+
+
+        </div>
+
+        <div class = "row">
+
+        </div>
+
+        <div class = "row">
+
+        </div>
+
+        <!-- Title for game -->
+        <h1>Word Guessing Game!</h1>
+        <br>
+        <!-- Instructions -->
+        <p>Press any key to get started!</p>
+        <br>
+        <!-- Word chosen by computer will be represented by underscores here -->
+        <p id = "chosenWord"></p>
+        <br>
+        <!-- Keeps a count of guesses until player loses -->
+        Guesses remaining:<p id = "guessesRemaining"></p>
+        <br>
+        <!-- Records player wins and losses -->
+        Wins: <p id = "winsText"></p>
+        Losses: <p id = "lossesText"></p>
+        <br>
+        <!-- Shows player letters guessed so far -->
+        Letter guessed so far: <p id = "lettersGuessed"></p>
+        
+    </div>
     <script src="./assets/javascript/game.js">
 
     </script>
