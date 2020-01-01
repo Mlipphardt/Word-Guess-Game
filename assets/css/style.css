@@ -1,3 +1,13 @@
 #chosenWord{
     font-size: xx-large;
 }
+
+.Title-words{
+    color: white;
+    font-size: 60px;
+    margin-top: 29px;
+}
+
+span{
+    font-size: large
+}
