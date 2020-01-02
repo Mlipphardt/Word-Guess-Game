@@ -13,6 +13,11 @@ a{
     color: white;
 }
 
+#glossary{
+    font-size: 22px;
+    text-align: left;
+}
+
 .jumbotron{
     color: white;
 }
