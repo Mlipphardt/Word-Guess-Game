@@ -107,42 +107,45 @@ document.onkeyup = function(event){
             resetGame();
         } else if(guessingStatus.join("") == chosenWord){
             resetGame();
-        }
+        } else {
 
-         //If user guesses a letter correctly, updates underscore array.
-        if (chosenWord.includes(userGuess)){
-            console.log(userGuess);
-            for (i = 0; i < chosenWord.length; i++){
-                chosenWordIndex = chosenWord.indexOf(userGuess, i);
-                console.log(chosenWordIndex);
-                    if (!(chosenWordIndex == -1)) {
-                        guessingStatus[chosenWordIndex] = userGuess;
-                        chosenWordText.textContent = guessingStatus.join(" ");
-                    }
-            }
+            //If user guesses a letter correctly, updates underscore array.
+            if (chosenWord.includes(userGuess)){
+                console.log(userGuess);
+                for (i = 0; i < chosenWord.length; i++){
+                    chosenWordIndex = chosenWord.indexOf(userGuess, i);
+                    console.log(chosenWordIndex);
+                        if (!(chosenWordIndex == -1)) {
+                            guessingStatus[chosenWordIndex] = userGuess;
+                            chosenWordText.textContent = guessingStatus.join(" ");
+                        }
+                }
 
-        //Adds guessed letter to letters guessed text if letter is novel this round.
-            addLetter(userGuess);
+            //Adds guessed letter to letters guessed text if letter is novel this round.
+                addLetter(userGuess);
 
-        //If the word is guessed, add to wins, update word reveal text.
-            if(guessingStatus.join("") == chosenWord){
-                wins++;
-                winsText.textContent = wins;
-                chosenWordReveal.textContent = "Congratulations! Press any key to play again.";
-            }
-        } 
-            //Subtracts guesses remaining if user inputs incorrect guess.
-            else {
-            guessesRemaining -= 1;
-            guessesRemainingText.textContent = guessesRemaining;
-            addLetter(userGuess);
+            //If the word is guessed, add to wins, update word reveal text.
+                if(guessingStatus.join("") == chosenWord){
+                    wins++;
+                    winsText.textContent = wins;
+                    chosenWordReveal.textContent = "Congratulations! Press any key to play again.";
+                }
             } 
+                //Subtracts guesses remaining if user inputs incorrect guess.
+                else {
+                guessesRemaining -= 1;
+                guessesRemainingText.textContent = guessesRemaining;
+                addLetter(userGuess);
+                } 
 
-            //If no guesses are left, reveals word, adds to loss counter.
-            if(guessesRemaining == 0){
-                losses++;
-                lossesText.textContent = losses;
-                chosenWordReveal.textContent = "The word was: " + chosenWord + ". Press any key to play again.";
-            }
+                //If no guesses are left, reveals word, adds to loss counter.
+                if(guessesRemaining == 0){
+                    losses++;
+                    lossesText.textContent = losses;
+                    chosenWordReveal.textContent = "The word was: " + chosenWord + ". Press any key to play again.";
+                }
         }
     }
+}
+    
+    
