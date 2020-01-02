@@ -81,6 +81,13 @@ function resetGame(){
     lettersGuessed = [];
     lettersGuessedText.textContent = lettersGuessed.join();
     chosenWordReveal.textContent = "Press any letter!";
+};
+
+function addLetter(letter) {
+    if(!lettersGuessed.includes(letter)){
+        lettersGuessed.push(letter);
+        lettersGuessedText.textContent = lettersGuessed.join(" ");
+    } 
 }
 
 resetGame();
@@ -90,12 +97,17 @@ document.onkeyup = function(event){
 
     userGuess = event.key.toLowerCase();
 
+    //Checks if user pressed a letter key by grabbing keycodes. Only proceeds with game if letter.
     if (event.which <= 90 && event.which >= 48){
 
+        //Resets the game if guesses are at 0 or word has been guessed.
         if(guessesRemaining == 0){
+            resetGame();
+        } else if(guessingStatus.join("") == chosenWord){
             resetGame();
         }
 
+         //If user guesses a letter correctly, updates underscore array.
         if (chosenWord.includes(userGuess)){
             console.log(userGuess);
             for (i = 0; i < chosenWord.length; i++){
@@ -107,22 +119,34 @@ document.onkeyup = function(event){
                     }
             }
 
-            if(!lettersGuessed.includes(userGuess)){
-                lettersGuessed.push(userGuess);
-                lettersGuessedText.textContent = lettersGuessed.join(" ");
-            } 
+        //Adds guessed letter to letters guessed text if letter is novel this round.
+                
+             addLetter(userGuess);
+            // if(!lettersGuessed.includes(userGuess)){
+            //         lettersGuessed.push(userGuess);
+            //         lettersGuessedText.textContent = lettersGuessed.join(" ");
+            //     } 
+
+        //If the word is guessed, add to wins, update word reveal text.
             if(guessingStatus.join("") == chosenWord){
                 wins++;
                 winsText.textContent = wins;
-                resetGame();
+                chosenWordReveal.textContent = "Congratulations, you guessed the word: " + chosenWord;
             }
-        } else {
+
+        } 
+            //Subtracts guesses remaining if user inputs incorrect guess.
+            else {
             guessesRemaining -= 1;
             guessesRemainingText.textContent = guessesRemaining;
-            if(!lettersGuessed.includes(userGuess)){
-                lettersGuessed.push(userGuess);
-                lettersGuessedText.textContent = lettersGuessed.join(" ");
+            addLetter(userGuess);
+
+            // if(!lettersGuessed.includes(userGuess)){
+            //     lettersGuessed.push(userGuess);
+            //     lettersGuessedText.textContent = lettersGuessed.join(" ");
             } 
+
+            //If no guesses are left, reveals word, adds to loss counter.
             if(guessesRemaining == 0){
                 losses++;
                 lossesText.textContent = losses;
@@ -130,4 +154,3 @@ document.onkeyup = function(event){
             }
         }
     }
-}
