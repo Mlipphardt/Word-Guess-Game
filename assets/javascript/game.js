@@ -128,7 +128,7 @@ document.onkeyup = function(event){
             if(guessingStatus.join("") == chosenWord){
                 wins++;
                 winsText.textContent = wins;
-                chosenWordReveal.textContent = "Congratulations, you guessed the word: " + chosenWord;
+                chosenWordReveal.textContent = "Congratulations! Press any key to play again.";
             }
         } 
             //Subtracts guesses remaining if user inputs incorrect guess.
@@ -142,7 +142,7 @@ document.onkeyup = function(event){
             if(guessesRemaining == 0){
                 losses++;
                 lossesText.textContent = losses;
-                chosenWordReveal.textContent = "The word was: " + chosenWord;
+                chosenWordReveal.textContent = "The word was: " + chosenWord + ". Press any key to play again.";
             }
         }
     }
