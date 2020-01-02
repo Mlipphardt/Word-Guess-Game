@@ -89,7 +89,7 @@ function addLetter(letter) {
         lettersGuessed.push(letter);
         lettersGuessedText.textContent = lettersGuessed.join(" ");
     } 
-}
+};
 
 //Begins the first game.
 resetGame();
