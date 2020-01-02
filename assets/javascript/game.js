@@ -1,6 +1,7 @@
 
 // Variables for grabbing html tags
 var chosenWordText = document.getElementById("chosenWord");
+var chosenWordReveal = document.getElementById("chosenWordReveal");
 var guessesRemainingText = document.getElementById("guessesRemaining");
 var winsText = document.getElementById("winsText");
 var lossesText = document.getElementById("lossesText");
@@ -79,6 +80,7 @@ function resetGame(){
     chosenWordText.textContent = guessingStatus.join("_");
     lettersGuessed = [];
     lettersGuessedText.textContent = lettersGuessed.join();
+    chosenWordReveal.textContent = "Press any letter!";
 }
 
 resetGame();
@@ -87,6 +89,10 @@ resetGame();
 document.onkeyup = function(event){
 
     userGuess = event.key.toLowerCase();
+
+    if(guessesRemaining == 0){
+        resetGame();
+    }
 
     if (chosenWord.includes(userGuess)){
         console.log(userGuess);
@@ -118,7 +124,7 @@ document.onkeyup = function(event){
         if(guessesRemaining == 0){
             losses++;
             lossesText.textContent = losses;
-            resetGame();
+            chosenWordReveal.textContent = "The word was: " + chosenWord;
         }
     }
 }
