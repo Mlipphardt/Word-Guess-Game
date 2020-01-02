@@ -18,7 +18,6 @@ var wordDictionary = [
     "ratio",
     "pigeon",
     "rat",
-    "lever",
     "schedule",
     "contingency",
     "functional",
@@ -34,14 +33,14 @@ var wordDictionary = [
     "sensory",
     "stimulus",
     "motivating",
-    "approach",
     "preferred",
     "assessment",
     "reinforcer",
     "punisher",
     "antecedent",
     "behavior",
-    "consequence"
+    "consequence",
+    "agreement"
 ];
 
 
