@@ -26,7 +26,7 @@
 
             <div class = "col-lg-4 text-center font-weight-bold">
 
-                <img src="./assets/images/standardchartresized.png" class="img-fluid" alt="B.F. Skinner">
+                <img src="./assets/images/standardchartresized.png" class="img-fluid" alt="Standard celeration chart"">
 
             </div>
 
@@ -48,8 +48,8 @@
             <div class = "col-lg-4 text-center">
 
                 <span>
-                    <a href="./index.html"> <strong>Game</strong> |</a>
-                    <a href="./glossary.html"> Glossary</a>
+                    <a href="./index.html"> Game |</a>
+                    <a href="./glossary.html"> <strong>Glossary</strong></a>
                 </span>
 
             </div>
@@ -60,76 +60,71 @@
 
         <div class = "row">
 
-            <div class = "col-lg-1"></div>
+            <div class = "col-lg-2"></div>
 
 
-            <div class = "col-lg-10 jumbotron bg-info text-center">
+            <div class = "col-lg-8 jumbotron bg-info text-center">
+                <h1>Glossary - Spoilers ahead!</h1>
+                <hr>
 
-                <div class = "row">
+                <p>Acceleration: When an event on a chart is increasing in rate over time.</p>
 
-                    <div class = "col-lg-12"
-                    <!-- Title for game -->
-                    <h1>Word Guessing Game!</h1>
-                    <br>
+                <p>Antecedent: Any stimuli which occurs before a behavior. May be either a motivating operation or a discriminative stimulus. </p>
+
+                <p>Attention: One of the four functions behavior may serve. The behavior is commonly preceded by the availability of preferred individuals or deprivation of attention, and has attention as its consequence.</p>
+
+                <p>Behavior: All that an individual does.</p>
+
+                <p>B.F. Skinner: A brilliant scientist whose work formed the foundation of operant conditioning - altering behavior by manipulating consequences.</p>
+
+                <p>Consequence: Any stimuli which occurs after a behavior. May result in reinforcement or punishment, or may have no effect on a given behavior.</p>
+
+                <p>Contingency: A functional relation between a given behavior and a resulting consequence. Pressing a key on your keyboard has a functional relation with the sight of the letter you typed.</p>
+
+                <p>Deceleration: When an event on a chart is decreasing in rate over time.</p>
+
+                <p>Escape: One of the four functions behavior may serve. The behavior is commonly preceded by the introduction of aversive stimuli, and has the removal of said stimuli as its consequence.</p>
+
+                <p>Functional: Every behavior is maintained by some functional consequence.</p>
+
+                <p>Inter-Observer Agreement: When a behavior is operationally defined, multiple behaviorists must collect data on the behavior using the given definition and compare their results. The behavior is redefined until inter-observer agreement is reached.</p>
+
+                <p>Level: A straight line drawn horizontally across the chart by averaging all data points. Commonly used in chart analysis.</p>
+
+                <p>Motivating Operations: Stimuli which increase or decrease the value of a given reinforcer. Deprivation of water is a typical motivating operation which increases the value of water as a reinforcer and may evoke an individual to get a drink. Drinking a gallon of water will likely have the opposite effect.</p>
+
+                <p>Observable: All behavior must be observable to be recorded. </p>
+
+                <p>Preferred: Preferred items, activities, and people have served as reinforcers for an individual. Whether or not they are currently reinforcers depends on the presence of motivating operations.</p>
+
+                <p>Punisher: A term for a stimuli which occurs after a behavior and decreases its rate or intensity over time when applied. Can only be identified with complete confidence upon review of multiple data points.</p>
+
+                <p>Punishment: The effect that occurs when a consequence decreases either the rate or intensity of a behavior. Can be either positive, if consequence added stimuli, or negative if consequence removed stimuli.</p>
+
+                <p>Ratio of Reinforcement/Schedule of Reinforcement: The schedule by which reinforcing consequences are delivered. May be fixed, like a vending machine, or variable, like a slot machine.</p>
                 
-                    <!-- Instructions -->
-                    <p>Press any key to get started!</p>
-                    <br>
+                <p>Reinforcer: A term for a stimuli which occurs after a behavior and increases its rate or intensity over time when applied. Can only be identified with complete confidence upon review of multiple data points.</p>
 
-                    </div>
+                <p>Reinforcement: The effect that occurs when a consequence increases either the rate or intensity of a behavior. Can be either positive, if consequence added stimuli, or negative if consequence removed stimuli. </p>
 
-                </div>
+                <p>Sensory: One of the four functions behavior may serve. The behavior is commonly preceded by the deprivation of sensory activity, and has the activity itself as its consequence. An individual who bounces their legs when they sit down would be able to be serving a sensory function by doing so.</p>
 
-                <div class = "row">
+                <p>Standard Celeration Chart: Also known as a "six-cycle" chart, it is a semi-logarithmic means of displaying the rate of an event. It is the primary chart of Applied Behavior Analysis.</p>
 
-                    <div class = "col-lg-12"
-                    <!-- Word chosen by computer will be represented by underscores here -->
-                    <p id = "chosenWord"></p>
-                    <br>
-                    </div>
+                <p>Stimulus: Anything an individual may experience through their senses. Includes events, people, items, and even internal sensations and emotions. Stimulus may evoke behavior or serve as its maintain consequence.</p>
 
-                </div>
-                
-                <div class = "row">
-                
-                    <div class = "col-lg-3">
+                <p>Tangible: Often referred to as "access." One of the four functions behavior may serve. The behavior is commonly preceded by the availability of preferred items, activities, or places, or the deprivation of these, and has access as its consequence.</p>
 
-                    <img src="./assets/images/rat.jpg" class="img-fluid" alt="a rat">
+                <p>Trend: A line drawn on a chart which indicates change in rate. Commonly used in chart analysis.</p>
+                                
+               
 
 
-                    </div>    
-                
-                    <div class = "col-lg-6 test-left">
-                    <!-- Keeps a count of guesses until player loses -->
-                    Guesses remaining:<p id = "guessesRemaining"></p>
-                    <!-- Records player wins and losses -->
-                    Wins: <p id = "winsText"></p>
-                    Losses: <p id = "lossesText"></p>
-                    <br>
-                    </div>
-
-                   <div class = "col-lg-3">
-
-                  <img src="./assets/images/pigeon.jpg" class="img-fluid" alt="a pigeon">
-
-                    
-                   </div>
+       
 
 
 
-                </div>  
-
-                <div class = "row">
-
-                    <div class = "col-lg-12">
-                    <!-- Shows player letters guessed so far -->
-                    Letter guessed so far: <p id = "lettersGuessed"></p>
-                    </div>
-                 
-                </div>
-
-
-            <div class = "col-lg-1"></div>
+            <div class = "col-lg-2"></div>
 
 
       </div>
