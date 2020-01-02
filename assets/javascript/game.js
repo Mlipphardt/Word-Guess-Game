@@ -90,41 +90,44 @@ document.onkeyup = function(event){
 
     userGuess = event.key.toLowerCase();
 
-    if(guessesRemaining == 0){
-        resetGame();
-    }
+    if (event.which <= 90 && event.which >= 48){
 
-    if (chosenWord.includes(userGuess)){
-        console.log(userGuess);
-        for (i = 0; i < chosenWord.length; i++){
-            chosenWordIndex = chosenWord.indexOf(userGuess, i);
-            console.log(chosenWordIndex);
-                if (!(chosenWordIndex == -1)) {
-                    guessingStatus[chosenWordIndex] = userGuess;
-                    chosenWordText.textContent = guessingStatus.join(" ");
-                }
-        }
-
-        if(!lettersGuessed.includes(userGuess)){
-            lettersGuessed.push(userGuess);
-            lettersGuessedText.textContent = lettersGuessed.join(" ");
-        } 
-        if(guessingStatus.join("") == chosenWord){
-            wins++;
-            winsText.textContent = wins;
+        if(guessesRemaining == 0){
             resetGame();
         }
-    } else {
-        guessesRemaining -= 1;
-        guessesRemainingText.textContent = guessesRemaining;
-        if(!lettersGuessed.includes(userGuess)){
-            lettersGuessed.push(userGuess);
-            lettersGuessedText.textContent = lettersGuessed.join(" ");
-        } 
-        if(guessesRemaining == 0){
-            losses++;
-            lossesText.textContent = losses;
-            chosenWordReveal.textContent = "The word was: " + chosenWord;
+
+        if (chosenWord.includes(userGuess)){
+            console.log(userGuess);
+            for (i = 0; i < chosenWord.length; i++){
+                chosenWordIndex = chosenWord.indexOf(userGuess, i);
+                console.log(chosenWordIndex);
+                    if (!(chosenWordIndex == -1)) {
+                        guessingStatus[chosenWordIndex] = userGuess;
+                        chosenWordText.textContent = guessingStatus.join(" ");
+                    }
+            }
+
+            if(!lettersGuessed.includes(userGuess)){
+                lettersGuessed.push(userGuess);
+                lettersGuessedText.textContent = lettersGuessed.join(" ");
+            } 
+            if(guessingStatus.join("") == chosenWord){
+                wins++;
+                winsText.textContent = wins;
+                resetGame();
+            }
+        } else {
+            guessesRemaining -= 1;
+            guessesRemainingText.textContent = guessesRemaining;
+            if(!lettersGuessed.includes(userGuess)){
+                lettersGuessed.push(userGuess);
+                lettersGuessedText.textContent = lettersGuessed.join(" ");
+            } 
+            if(guessesRemaining == 0){
+                losses++;
+                lossesText.textContent = losses;
+                chosenWordReveal.textContent = "The word was: " + chosenWord;
+            }
         }
     }
 }
