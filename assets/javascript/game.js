@@ -100,7 +100,7 @@ document.onkeyup = function(event){
     userGuess = event.key.toLowerCase();
 
     //Checks if user pressed a letter key by grabbing keycodes. Only proceeds with game if user presses a letter.
-    if (event.which <= 90 && event.which >= 48){
+    if (event.which <= 90 && event.which >= 65){
 
         //Resets the game if guesses are at 0 or word has been guessed.
         if(guessesRemaining == 0){
